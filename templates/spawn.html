@@ -1,0 +1,50 @@
+{% extends "page.html" %}
+{% if announcement_spawn %}
+  {% set announcement = announcement_spawn %}
+{% endif %}
+
+{% block main %}
+
+<div class="container" id="form-page" xmlns="http://www.w3.org/1999/html">
+  {% block heading %}
+  <br>
+  <div class="row align-items-center justify-content-center">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-sm-12">
+                        <div class="card h-100 bg-info mb-3">
+                           <div class="card-body">
+                              <h3 class="card-title">What is this?</h3>
+                               <p class="card-text">This form lets you launch your dedicated container on the <mark>shared</mark> area of the Unified Analytics Platform. In this container you will get the jupyter notebook server running. If your computing needs are sufficed in up to <mark>4 cores/16 GB Memory</mark>, this is the right option for you. Kindly reach out to the Fusion team for additional details</p>
+                           </div>
+                        </div>
+                     </div>
+        <div class="col-sm-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="card-title">Select your container size</h3>
+                <br>
+              <div class="form-group">
+                {% if for_user and user.name != for_user.name -%}
+                  <p>Spawning server for {{ for_user.name }}</p>
+                {% endif -%}
+                {% if error_message -%}
+                  <p class="spawn-error-msg text-danger">
+                    Error: {{error_message}}
+                  </p>
+                {% endif %}
+                <form enctype="multipart/form-data" id="spawn_form" action="{{url}}" method="post" role="form">
+                  {{spawner_options_form | safe}}
+                  <br>
+                  <input type="submit" value="Launch my container" class="btn btn-jupyter form-control">
+                </form>
+              </div>
+                        </div>
+                      </div>
+                    </div>
+  {% endblock %}
+</div>
+    </div>
+  </div>
+{% endblock %}
+</div>

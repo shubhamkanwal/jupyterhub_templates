@@ -1,0 +1,16 @@
+{
+"nlp":[
+    ["1","t3a.2xlarge","8","32", "0.3008"]
+],
+"gpu":[
+    ["9","p2.xlarge","4","16 + 61 GB Elastic CPU", "0.90"],
+    ["10","p3.2xlarge","4","16 + 61 GB Elastic CPU", "3.06"],
+    ["3","p2.8xlarge","32","97 + 488 GB Elastic CPU", "7.20"],
+    ["4","p2.16xlarge","64","201 + 732 GB Elastic CPU", "14.40"],
+    ["6","p3.8xlarge","32","97 + 244 GB Elastic CPU", "12.24"],
+    ["7","p3.16xlarge","64","201 + 488 GB Elastic CPU", "24.48"]
+],
+"ml": [
+    ["8","t3a.2xlarge","8","32", "0.3008"]
+]
+}
